@@ -7,7 +7,7 @@ async def measure_latency() -> tuple[float, str]:
     async with httpx.AsyncClient(timeout=5.0) as client:
         start_time = time.perf_counter()
         try:
-            response = await client.get("https://www.google.com") #error link 
+            response = await client.get(settings.LATENCY_TEST_URL)
             latency = (time.perf_counter() - start_time) * 1000
 
             if latency < 50:
