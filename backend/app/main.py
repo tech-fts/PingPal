@@ -2,7 +2,6 @@ import socketio
 from fastapi import FastAPI
 from app.tracker import measure_latency
 from app.database import init_db, log_latency
-from app.scanner import scan_network
 
 # initialize socket.io
 socket_init = socketio.AsyncServer(async_mode="asgi", cross_origin_origins="*")
